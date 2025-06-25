@@ -14,7 +14,6 @@ Uma aplicação web inspirada no Netflix, desenvolvida com Django, que permite a
 
 🌐 **Acesse a aplicação:** [https://pyflix-netflix-clone.herokuapp.com](https://pyflix-netflix-clone.herokuapp.com)
 
-*Nota: Link de exemplo - substitua pela URL real do seu deploy*
 
 ## 📋 Índice
 
@@ -111,8 +110,8 @@ Antes de começar, você precisará ter instalado em sua máquina:
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/pyflix-netflix-clone.git
-cd pyflix-netflix-clone
+git clone https://github.com/FernanSoCar/Pyflix.git
+cd Pyflix
 ```
 
 ### 2. Crie um ambiente virtual
@@ -248,7 +247,6 @@ Copia_Netflix/
 │   ├── 📁 js/                  # Scripts JavaScript
 │   └── 📁 images/              # Imagens do layout
 ├── 📁 templates/                # Templates globais
-├── 📄 db.sqlite3               # Banco de dados
 ├── 📄 manage.py                # Utilitário Django
 ├── 📄 pyproject.toml           # Configurações do projeto
 ├── 📄 uv.lock                  # Lock file das dependências
@@ -278,7 +276,7 @@ Copia_Netflix/
 {
     "id": 1,
     "titulo": "Nome do Filme",
-    "categoria": "PROGRAMACAO",
+    "categoria": "OUTROS",
     "visualizacoes": 150,
     "data_criacao": "2024-01-15",
     "duracao": 120,
@@ -349,7 +347,6 @@ Contribuições são sempre bem-vindas! Para contribuir:
 ### Melhorias Técnicas
 - [ ] Testes unitários e de integração
 - [ ] Cache com Redis
-- [ ] Banco PostgreSQL
 - [ ] Docker e Docker Compose
 - [ ] CI/CD com GitHub Actions
 - [ ] Monitoring e logging
