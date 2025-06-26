@@ -10,10 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
-from pathlib import Path
 import os
-from decouple import config, Csv
-
+from pathlib import Path
+import dj_database_url
+from decouple import Csv, config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -62,6 +62,15 @@ LOGGING = {
         },
     },
 }
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -74,10 +83,13 @@ INSTALLED_APPS = [
     'filme', # Main application for movie management
     'crispy_forms',  # Crispy Forms for better form rendering
     'crispy_bootstrap5',  # Bootstrap 5 template pack for Crispy Forms
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,6 +136,10 @@ DATABASES = {
 }
 
 
+# Configuração do banco de dados para produção
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 AUTH_USER_MODEL = 'filme.Usuario'  # Custom user model
@@ -159,6 +175,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/' # URL for static files (CSS, JS, images, etc.)
+
+STATIC_ROOT = BASE_DIR / 'staticfiles' # Directory where static files are collected
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',

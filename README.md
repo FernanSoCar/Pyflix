@@ -12,7 +12,7 @@ Uma aplicação web inspirada no Netflix, desenvolvida com Django, que permite a
 
 ## 🚀 Deploy
 
-🌐 **Acesse a aplicação:** [https://pyflix-netflix-clone.herokuapp.com](https://pyflix-netflix-clone.herokuapp.com)
+🌐 **Acesse a aplicação:** [Heroku](https://pyflix-94150dc9bf94.herokuapp.com/)
 
 
 ## 📋 Índice
@@ -364,7 +364,7 @@ Contribuições são sempre bem-vindas! Para contribuir:
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 
-**Link do Projeto:** [https://github.com/seu-usuario/pyflix-netflix-clone](https://github.com/seu-usuario/pyflix-netflix-clone)
+**Link do Projeto:** [Repositório do Projeto](https://github.com/FernanSoCar/Pyflix.git)
 
 ---
 

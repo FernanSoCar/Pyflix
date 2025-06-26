@@ -1,0 +1,1 @@
+web: gunicorn Pyflix.wsgi --log-file -
